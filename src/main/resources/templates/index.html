@@ -1,0 +1,19 @@
+<html>
+<head><title>Home Page</title></head>
+<body>
+<h1>Hello !</h1>
+<p>Welcome to <span th:text="${appName}">Our App</span></p>
+
+<form action="#" th:action="@{/updategame}" th:object="${game}" method="post">
+    <p>Round <span th:text="${game.round}">Round</span> | Current Score <span th:text="${game.score}">Current Score</span></p>
+    <p>Multiply the two numbers</p>
+    <p>First Number <span th:text="${game.firstNumber}">firstNumber</span></p>
+    <p>Second Number <span th:text="${game.secondNumber}">secondNumber</span></p>
+
+    <label for="userInput">Your Answer</label>
+    <input type="number" th:field="*{userInput}" id="userInput" placeholder="Your Answer">
+    <input type="submit" value="Calculate!">
+</form>
+
+</body>
+</html>
